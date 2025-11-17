@@ -1,0 +1,8 @@
+prefix=/home/hzp/Ros2026/devel
+
+Name: arbotix_firmware
+Description: Description of arbotix_firmware
+Version: 0.11.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

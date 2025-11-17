@@ -1,0 +1,37 @@
+<robot name="mycar" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:property name="camera_H" value="0.006"/>
+    <xacro:property name="camera_W" value="0.004"/>
+    <xacro:property name="camera_L" value="0.008"/>
+    <xacro:property name="joint_camera_L" value="${radius}"/>
+    <xacro:property name="joint_camera_W" value="0"/>
+    <xacro:property name="joint_camera_H" value="${base_lenth/2 + camera_H/2}"/>
+
+    <link name="camera">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="${camera_W} ${camera_L} ${camera_H}" /> 
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 0.9" />
+            </material>
+        </visual>
+    <collision>
+         <geometry>
+                <box size="${camera_W} ${camera_L} ${camera_H}" /> 
+        </geometry>         
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+        <xacro:Box_inertial_matrix m="0.01" l="${camera_W}" w="${camera_L}" h="${camera_H}"/>
+    </link>
+    <gazebo reference="camera">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+    <joint name="camera_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="camera" />
+        <origin xyz="${joint_camera_L-camera_W/2} ${joint_camera_W} ${joint_camera_H}" rpy="0 0 0" />
+ 
+     </joint>
+</robot>

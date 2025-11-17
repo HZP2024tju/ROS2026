@@ -1,0 +1,9 @@
+<launch>
+    <!--乌龟杂技-->
+    <node pkg = "turtle_test" type="turtest_node" name="round" output="screen"/>
+    <!--订阅位置-->
+    <node pkg = "turtle_test" type="tursub_node" name="sub" output="screen"/>
+    <!--more turtle-->
+    <node pkg = "turtle_test" type="turmro_node" name="mroe" output="screen"/>
+
+</launch>

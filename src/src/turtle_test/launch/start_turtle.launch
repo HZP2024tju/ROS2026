@@ -1,0 +1,8 @@
+<launch>
+    <!--乌龟-->
+    <node pkg = "turtlesim" type="turtlesim_node" name="turtle" output="screen"/>
+    <!--键盘-->
+    <node pkg = "turtlesim" type="turtle_teleop_key" name="key" output="screen"/>
+
+    
+</launch>

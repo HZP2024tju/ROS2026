@@ -1,0 +1,7 @@
+<launch>
+    <param name="robot_description" textfile="$(find model)/urdf/urdf/demo03.urdf"/>
+    <node pkg = "robot_state_publisher" type = "robot_state_publisher" name = "joint_state_publisher"/>
+    <node pkg = "joint_state_publisher" type = "joint_state_publisher" name = "robot_state_publisher"/>
+    <node pkg = "rviz" type = "rviz" name = "rviz" args="-d $(find model)/config/helloworld.rviz" />
+    <node pkg = "joint_state_publisher_gui" type = "joint_state_publisher_gui" name ="mk3"/>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/hzp/Ros2026/devel
+
+Name: tran
+Description: Description of tran
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

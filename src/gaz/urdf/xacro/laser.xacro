@@ -1,0 +1,71 @@
+<robot name="mycar" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:property name="laser_H" value="0.06"/>
+    <xacro:property name="laser_R" value="0.004"/>
+    <xacro:property name="sup_W" value="0.016"/>
+    <xacro:property name="sup_L" value="0.027"/>
+    <xacro:property name="sup_H" value="0.009"/>
+    <xacro:property name="joint_laser_x" value="0"/>
+    <xacro:property name="joint_laser_y" value="0"/>
+    <xacro:property name="joint_laser_z" value="${base_lenth/2 + laser_H/2}"/>
+    <xacro:property name="joint_sup_x" value="0"/>
+    <xacro:property name="joint_sup_y" value="0"/>
+    <xacro:property name="joint_sup_z" value="${base_lenth/2 + laser_H + sup_H/2}"/>
+
+    <link name="laser">
+        <visual>
+            <origin xyz="0 0 0" rpy="3.141592653 0 0" />
+            <geometry>
+                <cylinder radius="${laser_R}" length="${laser_H}" />
+            </geometry>
+            <material name="hack">
+                <color rgba="1 0 0 0.9" />
+            </material>
+        </visual>
+    <collision>
+         <geometry>
+                <cylinder radius="${laser_R}" length="${laser_H}" />
+        </geometry>         
+         <origin xyz="0 0 0" rpy="3.141592653 0 0" />
+    </collision>
+        <xacro:cylinder_inertial_matrix m="0.01"  r="${laser_R}" h="${laser_H}"/>
+    </link>
+    <gazebo reference="laser">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <joint name="laser_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="laser" />
+        <origin xyz="${joint_laser_x} ${joint_laser_y} ${joint_laser_z}" rpy="0 0 0" />
+ 
+     </joint>
+
+     <link name="sup">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="${sup_W} ${sup_L} ${sup_H}" /> 
+            </geometry>
+            <material name="dark">
+                <color rgba="0 0 0 0.9" />
+            </material>
+        </visual>
+    <collision>
+         <geometry>
+                <box size="${sup_W} ${sup_L} ${sup_H}" /> 
+        </geometry>         
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+        <xacro:Box_inertial_matrix m="0.01" l="${sup_W}" w="${sup_L}" h="${sup_H}"/>
+    </link>
+    <gazebo reference="sup">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <joint name="sup_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="sup" />
+        <origin xyz="${joint_sup_x} ${joint_sup_y} ${joint_sup_z}" rpy="0 0 0" />
+ 
+     </joint>
+</robot>
