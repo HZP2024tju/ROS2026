@@ -1,0 +1,8 @@
+<launch>
+    <!--乌龟-->
+    <node pkg = "turtlesim" type="turtlesim_node" name="mk1" output="screen"/>
+    <!--键盘-->
+    <node pkg = "mv_tran" type="fol_node" name="mk2" output="screen"/>
+    <node pkg = "turtlesim" type="turtle_teleop_key" name="mk3" output="screen"/>
+    <node pkg = "mv_tran" type="teg_node" name="mk5" output="screen" respawn="true"/>
+</launch>

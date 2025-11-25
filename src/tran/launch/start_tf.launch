@@ -1,0 +1,8 @@
+<launch>
+    <!--乌龟-->
+    <node pkg = "tran" type="tran_node" name="mk" output="screen"/>
+    <!--键盘-->
+    <node pkg = "tran" type="mk_node" name="more" output="screen"/>
+
+    
+</launch>

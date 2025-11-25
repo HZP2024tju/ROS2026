@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/home/hzp/Ros2026/devel/include/**",
+                "/opt/ros/noetic/include/**",
+                "/home/hzp/Ros2026/src/src/phone/include/**",
+                "/usr/include/**",
+                "${workspaceFolder}/src/openslam_gmapping/include"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}
