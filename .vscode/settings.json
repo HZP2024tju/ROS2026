@@ -1,0 +1,13 @@
+{
+    "cmake.sourceDirectory": "/home/hzp/Ros2026/src/src/phone",
+    "python.autoComplete.extraPaths": [
+        "/home/hzp/Ros2026/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/hzp/Ros2026/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "ros.distro": "noetic",
+    "ROS2.distro": "noetic"
+}
